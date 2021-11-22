@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
+
 /*
 App hovedområde
 */
@@ -10,8 +11,9 @@ const App = () => {
       <Text
       style={styles.header}
       >Hangman hjemmeside</Text>
-
       <Text style={styles.text}>Some more text</Text>
+    
+      
     </View>
   );
 }
