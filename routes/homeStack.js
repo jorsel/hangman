@@ -3,6 +3,7 @@ import { createAppContainer } from "react-navigation";
 import Landingpage from "../screens/landingpage";
 import Infopage from "../screens/infoscreen";
 import Settingpage from "../screens/settings";
+import Hangman from "../screens/hangman"
 
 
 
@@ -15,6 +16,9 @@ const screens = {
   },
   Settings:{
     screen: Settingpage
+  },
+  Hangman: {
+    screen: Hangman
   }
 }
 

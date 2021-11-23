@@ -11,14 +11,22 @@ export const globalStyles = StyleSheet.create({
     lineHeight: 20,
   },
   container: {
+    display:'flex',
     flex: 1,
+    flexDirection: 'column',
     padding: 20,
   },
+  btnContainer:{
+    display:'flex',
+    flex:1,
+    justifyContent:'space-evenly',
+    marginVertical: 10,
+  }
 
   
   
 });
-
+// Light theme colors
 export const lightMode = {
   background: '#FFFFFF',
   primary: '#512DA8',
