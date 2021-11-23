@@ -1,20 +1,17 @@
 import * as React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-
+import Navigator from "./routes/homeStack";
 
 /*
 App hovedområde
 */
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Text
-      style={styles.header}
-      >Hangman hjemmeside</Text>
-      <Text style={styles.text}>Some more text</Text>
+    
+      <Navigator/>
     
       
-    </View>
+    
   );
 }
 
