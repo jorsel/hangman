@@ -24,7 +24,7 @@ export default function Landing({navigation}) {
         <Button title='Start game' onPress={goToGame}></Button>
         <Button title='Information' onPress={goToInfo}></Button>
         <Button title='Settings' onPress={goToSettings}></Button>
-        
+       
       </View>
       
 
