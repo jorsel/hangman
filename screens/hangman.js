@@ -23,10 +23,13 @@ export default function hangman() {
 
     function revealLetters(letter) {
         setWord(word + letter)
+        
     }
     function checkwin() {
         if (correctLetters.length + 1 == keyword.length) {
-            alert('You won!')
+            alert('You won!');
+            //kan gjemme textinput ved å sette
+             //display til none når man vinner
         }
     }
 
@@ -40,6 +43,7 @@ export default function hangman() {
 
 
             <TextInput
+                
                 //har ikke funger på android siden 2019 i følge github
                 autoCapitalize={'characters'}
                 placeholder='Enter guess'
@@ -81,3 +85,12 @@ export default function hangman() {
         </View>
     )
 }
+/*
+todo
+fiks bug med at brett ikke starter med verdi
+generer tilfeldige ord
+tegn et tomt brett med _ _ _ _ etc for hver bokstav i nøkkelord
+setState eller lignende med display:none for å gjemme textinput etter seier/tap
+en måte å starte spillet på nytt uten å gå ut og inn
+*/
+

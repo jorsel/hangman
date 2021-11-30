@@ -21,9 +21,14 @@ export const globalStyles = StyleSheet.create({
     flex:1,
     justifyContent:'space-evenly',
     marginVertical: 10,
+  },
+  textinput:{
+    display:'none'
   }
 
 });
+//invers verdi til liv
+//hadde jeg hatt mere hjernekapasitet hadde jeg bare lagret bildene fra bunnverdien i stedet
 export const scaffoldImages = {
   scaffoldState : {
     '1': require('../img/scaffold7.png'),
