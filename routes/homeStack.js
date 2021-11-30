@@ -7,6 +7,8 @@ import Hangman from "../screens/hangman"
 
 
 
+
+
 const screens = {
   Landing: {
     screen: Landingpage
@@ -19,7 +21,8 @@ const screens = {
   },
   Hangman: {
     screen: Hangman
-  }
+  },
+  
 }
 
 const HomeStack = createStackNavigator(screens);

@@ -23,21 +23,17 @@ export const globalStyles = StyleSheet.create({
     marginVertical: 10,
   }
 
-  
-  
 });
-// Light theme colors
-export const lightMode = {
-  background: '#FFFFFF',
-  primary: '#512DA8',
-  text: '#121212',
-  error: '#D32F2F',
-};
+export const scaffoldImages = {
+  scaffoldState : {
+    '1': require('../img/scaffold7.png'),
+    '2': require('../img/scaffold6.png'),
+    '3': require('../img/scaffold5.png'),
+    '4': require('../img/scaffold4.png'),
+    '5': require('../img/scaffold3.png'),
+    '6': require('../img/scaffold2.png'),
+    '7': require('../img/scaffold1.png')
+  }
+  
 
-// Dark theme colors
-export const darkMode = {
-  background: '#121212',
-  primary: '#B39DDB',
-  text: '#FFFFFF',
-  error: '#EF9A9A',
-};
+}

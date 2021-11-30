@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, } from 'react-native';
+import { View, Text, Button, Pressable, } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 export default function Landing({navigation}) {
@@ -15,6 +15,8 @@ export default function Landing({navigation}) {
     navigation.navigate('Hangman')
   }
  
+
+ 
   return (
     <View style={globalStyles.container}>
 
@@ -24,10 +26,9 @@ export default function Landing({navigation}) {
         <Button title='Start game' onPress={goToGame}></Button>
         <Button title='Information' onPress={goToInfo}></Button>
         <Button title='Settings' onPress={goToSettings}></Button>
-       
-      </View>
-      
+        
 
+      </View>
     </View>
   );
 }
