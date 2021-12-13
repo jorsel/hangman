@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Navigator from "./routes/homeStack";
+import './i18n';
 
 /*
 App hovedområde

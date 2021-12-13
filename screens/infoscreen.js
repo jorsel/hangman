@@ -1,20 +1,25 @@
 import React from 'react';
-import { StyleSheet, View, Text,Button } from 'react-native';
+import { View, Text} from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import { globalStyles } from '../styles/global';
+import { useTranslation } from 'react-i18next';
 
 
 export default function Info() {
+
+  const {t,i18n} = useTranslation();
   
   return (
     <View style={globalStyles.container}>
       
         
       <Text style={globalStyles.paragraph}>
-        Hangman is a classic guessing game, where the aim of the game is to guess the hidden word before your man is hung. Every wrong letter is one step closer to the end.</Text>
-
-      <Text style={globalStyles.paragraph}>You are provided with every letter in the alphabet, but a limited number of guesses.
-      A good tactic is to try commonly used letters. Be smart, so your character may live : )</Text>
+        {t("desc1")}
+      </Text>
+      
+      <Text style={globalStyles.paragraph}>
+        {t("desc2")}
+        </Text>
       
       <TouchableOpacity></TouchableOpacity>
     </View>
