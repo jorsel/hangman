@@ -7,14 +7,17 @@ import { globalStyles,scaffoldImages } from '../styles/global';
 import { useTranslation } from 'react-i18next';
 
 
-
+//Picks a random word from list
 function generateRandomWord(){
     const words = [
         'GLADIATOR',
         'COPYRIGHT',
         'TASER',
         'FATHER',
-        'WINE'
+        'WINE',
+        'DOG',
+        'FLOWER'
+
     ]
     var randomword = words[Math.floor(Math.random() * words.length)];
     return randomword;
@@ -35,9 +38,10 @@ export default function hangman() {
     const [wrongLetters, setWrongLetters] = useState('');
     const [correctLetters, setCorrectLetters] = useState('');
     const [input, setInput] = useState('');
-    const [lives, setLives] = useState(7);
+    const [lives, setLives] = useState(6);
     const [word, setWord] = useState('');
     const [gamestatus, setGamestatus] = useState('');
+    const [showInput, setShowInput] = useState(true);
 
     const {t,i18n} = useTranslation();
 
@@ -49,8 +53,9 @@ export default function hangman() {
     function checkwin() {
         if (correctLetters.length + 1 == keyword.length) {
             alert(t("gameTranslations.gamestatusWin"));
-            //kan gjemme textinput ved å sette
-             //display til none når man vinner
+            //slår av textinput ved seier
+            setShowInput(false);
+            
         }
     }
     
@@ -59,6 +64,12 @@ export default function hangman() {
     return (
 
         <View style={hangmanStyles.container}>
+            {
+                /*
+                bildene importeres global.js, filnavn+antall liv
+                står i motsatt rekkefølge slik når man teller ned liv går man + på hvilket bilde som vises
+                */
+            }
             <Image style={globalStyles.scaffoldImages} source={(scaffoldImages.scaffoldState[lives+1])} />
             <Text> {t("gameTranslations.lives")} {lives} </Text>
             <Text> {t("gameTranslations.tried")} {wrongLetters.split('').join(' ')} </Text>
@@ -69,10 +80,12 @@ export default function hangman() {
                 
                 //har ikke fungert på android siden 2019 i følge github
                 autoCapitalize={'characters'}
+                editable={showInput}
                 placeholder={t("gameTranslations.makeGuess")}
                 maxLength={1}
                 //siden autocapitalize ikke fungerer
                 onChangeText={(text) => setInput(text.toUpperCase())}
+                blurOnSubmit={false}
                 onSubmitEditing={() => {
                     if (wrongLetters.includes(input) || correctLetters.includes(input)) {
                         
@@ -88,6 +101,7 @@ export default function hangman() {
                             setLives(lives-1);
                             alert(t("gameTranslations.gameover"));
                             setGamestatus(t("gameTranslations.gamestatusLoss") + `${keyword}`);
+                            setShowInput(false)
                         }
 
                         setInput('');
@@ -112,7 +126,6 @@ export default function hangman() {
 /*
 todo
 tegn et tomt brett med _ _ _ _ etc for hver bokstav i nøkkelord
-setState eller lignende med display:none for å gjemme textinput etter seier/tap
 en måte å starte spillet på nytt uten å gå ut og inn
 */
 

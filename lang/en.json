@@ -20,7 +20,8 @@
             "makeGuess":"Enter guess",
             "alert1": "You have already guessed ",
             "gameover": "Game over!",
-            "gamestatusLoss":"You lost, keyword was: "
+            "gamestatusLoss":"You lost, keyword was: ",
+            "gamestatusWin": "You won!"
         }
     
 }
