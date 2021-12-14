@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { View, Text, Image, Alert } from 'react-native';
-import { useState } from 'react';
+import { View, Text, Image} from 'react-native';
+import { useState, useEffect } from 'react';
 import { hangmanStyles } from '../styles/hangmanStyle';
 import { TextInput } from 'react-native-gesture-handler';
 import { globalStyles,scaffoldImages } from '../styles/global';
@@ -8,10 +8,30 @@ import { useTranslation } from 'react-i18next';
 
 
 
+function generateRandomWord(){
+    const words = [
+        'GLADIATOR',
+        'COPYRIGHT',
+        'TASER',
+        'FATHER',
+        'WINE'
+    ]
+    var randomword = words[Math.floor(Math.random() * words.length)];
+    return randomword;
+}
+
 export default function hangman() {
 
 
-    const keyword = 'COPYRIGHT';
+    const [keyword, setKeyword] = useState("")
+
+    useEffect(()=>{
+        const randWord = generateRandomWord();
+        setKeyword(randWord);
+    }, []);
+    console.log(keyword);
+    
+    
     const [wrongLetters, setWrongLetters] = useState('');
     const [correctLetters, setCorrectLetters] = useState('');
     const [input, setInput] = useState('');
@@ -28,7 +48,7 @@ export default function hangman() {
     }
     function checkwin() {
         if (correctLetters.length + 1 == keyword.length) {
-            alert('You won!');
+            alert(t("gameTranslations.gamestatusWin"));
             //kan gjemme textinput ved å sette
              //display til none når man vinner
         }
@@ -91,8 +111,6 @@ export default function hangman() {
 }
 /*
 todo
-fiks bug med at brett ikke starter med verdi
-generer tilfeldige ord
 tegn et tomt brett med _ _ _ _ etc for hver bokstav i nøkkelord
 setState eller lignende med display:none for å gjemme textinput etter seier/tap
 en måte å starte spillet på nytt uten å gå ut og inn

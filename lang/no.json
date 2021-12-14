@@ -20,7 +20,8 @@
             "makeGuess":"Prøv bokstav",
             "alert1": "Du har allerede forsøkt ",
             "gameover": "Spillet er over!",
-            "gamestatusLoss":"Du tapte, nøkkelordet var: "
+            "gamestatusLoss":"Du tapte, nøkkelordet var: ",
+            "gamestatusWin" : "Du vant!"
         }
     
     }
