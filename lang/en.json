@@ -6,7 +6,22 @@
         "langbtn" : "Change to Norwegian",
         "themebtn": "Change appearance of app",
         "langbtnTitle":"Change language",
-        "themebtnTitle":"Change appearance"
+        "themebtnTitle":"Change appearance",
+        "startBtn":"START GAME",
+        "infoBtn":"INFORMATION",
+        "settingsBtn":"SETTINGS",
+        "maintitle": "Main menu",
+        "welcome": "Welcome to the hangman game!",
+
+        "gameTranslations": {
+            "lives": "Current lives: ",
+            "tried": "You have tried: ",
+            "correctLetters": "Keyword: ",
+            "makeGuess":"Enter guess",
+            "alert1": "You have already guessed ",
+            "gameover": "Game over!",
+            "gamestatusLoss":"You lost, keyword was: "
+        }
     
 }
     

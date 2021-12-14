@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { hangmanStyles } from '../styles/hangmanStyle';
 import { TextInput } from 'react-native-gesture-handler';
 import { globalStyles,scaffoldImages } from '../styles/global';
-import { set } from 'react-native-reanimated';
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -19,6 +19,7 @@ export default function hangman() {
     const [word, setWord] = useState('');
     const [gamestatus, setGamestatus] = useState('');
 
+    const {t,i18n} = useTranslation();
 
 
     function revealLetters(letter) {
@@ -32,27 +33,30 @@ export default function hangman() {
              //display til none når man vinner
         }
     }
+    
+    
 
     return (
 
         <View style={hangmanStyles.container}>
             <Image style={globalStyles.scaffoldImages} source={(scaffoldImages.scaffoldState[lives+1])} />
-            <Text> Current lives: {lives} </Text>
-            <Text> You have tried: {wrongLetters.split('').join(' ')} </Text>
-            <Text> Keyword: {word} </Text>
+            <Text> {t("gameTranslations.lives")} {lives} </Text>
+            <Text> {t("gameTranslations.tried")} {wrongLetters.split('').join(' ')} </Text>
+            <Text> {t("gameTranslations.correctLetters")} {word} </Text>
 
 
             <TextInput
                 
-                //har ikke funger på android siden 2019 i følge github
+                //har ikke fungert på android siden 2019 i følge github
                 autoCapitalize={'characters'}
-                placeholder='Enter guess'
+                placeholder={t("gameTranslations.makeGuess")}
                 maxLength={1}
                 //siden autocapitalize ikke fungerer
                 onChangeText={(text) => setInput(text.toUpperCase())}
                 onSubmitEditing={() => {
                     if (wrongLetters.includes(input) || correctLetters.includes(input)) {
-                        alert(`letter ${input} already guessed`);
+                        
+                        alert(t("gameTranslations.alert1") + `${input}`)
                         setInput('');
                         //dersom nøkkelordet ikke inkluderer inputbokstaven
                     } else if (keyword.includes(input) == false) {
@@ -62,8 +66,8 @@ export default function hangman() {
                             setLives(lives-1);
                         } else {
                             setLives(lives-1);
-                            alert('Game over!');
-                            setGamestatus(`You lost, word was:${keyword}`);
+                            alert(t("gameTranslations.gameover"));
+                            setGamestatus(t("gameTranslations.gamestatusLoss") + `${keyword}`);
                         }
 
                         setInput('');

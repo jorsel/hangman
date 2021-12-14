@@ -6,7 +6,23 @@
         "langbtn" : "Bytt til Engelsk",
         "themebtn": "Endre applikasjonens utseende",
         "langbtnTitle":"Bytt språk",
-        "themebtnTitle":"Endre utseende"
+        "themebtnTitle":"Endre utseende",
+        "startBtn":"START SPILL",
+        "infoBtn":"INFORMASJON",
+        "settingsBtn":"INNSTILLINGER",
+        "maintitle": "Hovedmeny",
+        "welcome": "Velkommen til hangman spillet!",
+
+        "gameTranslations": {
+            "lives": "Liv igjen: ",
+            "tried": "Du har forsøkt: ",
+            "correctLetters": "Nøkkelord: ",
+            "makeGuess":"Prøv bokstav",
+            "alert1": "Du har allerede forsøkt ",
+            "gameover": "Spillet er over!",
+            "gamestatusLoss":"Du tapte, nøkkelordet var: "
+        }
+    
     }
     
 }
